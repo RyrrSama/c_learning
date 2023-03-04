@@ -1,0 +1,27 @@
+To run c/c++ code use gcc complier
+
+    To compile and run C code:
+
+        To compile c code use the following command:
+
+            gcc <src_file>.c -o file <object_file_name>.o -I <header_files_dir_path> -L <Library_file_dir_path>
+
+        * This will generate the exe file for the c code
+
+        To Run c o file use the following command:
+
+            <object_file_dir_path>/<object_file>.o
+
+    To compile and run C++ code:
+
+        To compile c++ code use the following command:
+
+            g++ <src_file>.cpp -o file <object_file_name>.o -I <header_files_dir_path> -L <Library_file_dir_path>
+
+        * This will generate the exe file for the c++ code
+
+        To Run c++ exe file use the following command:
+
+            <object_file_dir_path>/<object_file>.0
+
+
