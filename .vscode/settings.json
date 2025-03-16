@@ -1,0 +1,34 @@
+{
+  "c-cpp-flylint.run": "onSave",
+  "c-cpp-flylint.clang.includePaths": [
+    "${workspaceFolder}/common_module/include",
+    "${workspaceFolder}/common_module/src"
+  ],
+  "C_Cpp.default.includePath": [
+    "${workspaceFolder}/common_module/include",
+    "${workspaceFolder}/common_module/src"
+  ],
+  "C_Cpp.clang_format_style": "file", // Use .clang-format file if present
+  "C_Cpp.clang_format_fallbackStyle": "Google", // Fallback style if no .clang-format file is found
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "stringfuctions.h": "c",
+    "xstring": "c",
+    "xutility": "c",
+    "collections.h": "c",
+    "array": "c",
+    "initializer_list": "c",
+    "list": "c",
+    "utility": "c",
+    "vector": "c",
+    "xhash": "c",
+    "xtree": "c",
+    "stdbool.h": "c",
+    "algorithm": "c",
+    "iterator": "c",
+    "xmemory": "c",
+    "queue.h": "c",
+    "stack.h": "c"
+  },
+  "bitoAI.codeCompletion.enableAutoCompletion": false // Format on save
+}

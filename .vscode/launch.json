@@ -1,17 +1,34 @@
 {
-  "configurations": [
-    {
-      "name": "C/C++: cl.exe build and debug active file",
-      "type": "cppvsdbg",
-      "request": "launch",
-      "program": "${workspaceFolder}\\output\\${fileBasenameNoExtension}.exe",
-      "args": [],
-      "stopAtEntry": true,
-      "cwd": "${fileDirname}",
-      "environment": [],
-      "console": "integratedTerminal",
-      "preLaunchTask": "C/C++: cl.exe build active file"
-    }
-  ],
-  "version": "2.0.0"
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Run C/C++(GDB): Launch and Debug Active File",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\common_module\\output\\${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\MinGW\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build and link"
+        }
+
+    ]
 }

@@ -1,0 +1,57 @@
+# Use the LLVM coding style as the base
+BasedOnStyle: LLVM
+
+# Set the width of the indentation
+IndentWidth: 4
+
+# Set the width of the tab character
+TabWidth: 4
+
+# Use spaces instead of tabs for indentation
+UseTab: Never
+
+# Set the maximum line length
+ColumnLimit: 80
+
+# Align consecutive assignments
+AlignConsecutiveAssignments: true
+
+# Align trailing comments
+AlignTrailingComments: true
+
+# Break before braces for functions, classes, and namespaces
+BreakBeforeBraces: Allman
+
+# Allow short functions to be on a single line
+AllowShortFunctionsOnASingleLine: Inline
+
+# Allow short if statements to be on a single line
+AllowShortIfStatementsOnASingleLine: true
+
+# Allow short loops to be on a single line
+AllowShortLoopsOnASingleLine: true
+
+# Space before range-based for loop colon
+SpaceBeforeRangeBasedForLoopColon: true
+
+# Space after C++ cast
+SpaceAfterCStyleCast: true
+
+# Space before and after binary operators
+SpaceBeforeParens: ControlStatements
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+SpacesInAngles: false
+SpaceInEmptyParentheses: false
+
+# Indent case labels in switch statements
+IndentCaseLabels: true
+
+# Indent wrapped function names
+IndentWrappedFunctionNames: false
+
+# Sort includes
+SortIncludes: true
+
+# Reflow comments
+ReflowComments: true

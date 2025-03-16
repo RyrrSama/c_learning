@@ -8,7 +8,7 @@
 // A varaible can be decalarted many time in our code.but only once define in file function or block.
 /*
 extern modifier:
-    It is used to re-use the varaible thta is declared in other files.
+    It is used to re-use the varaible that is declared in other files.
 When we use extern the the varaible is only declared not defined
     which means memory is not allocated to it .
 When we declare a auto varaible it is decalred and defined 

@@ -11,7 +11,8 @@ void print_2by2_matrix();
     */
    
 int *get_tables(int multipler);
-
+// function pointer varaible
+int* (*funtion_ptr)(int) = get_tables;
 // int find_average(int *array);
 // int find_average(int array[size]);
 // int find_average(int array[]);

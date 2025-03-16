@@ -24,4 +24,9 @@ To run c/c++ code use gcc complier
 
             <object_file_dir_path>/<object_file>.0
 
+    To Create a obj file from a .c file use -c and -o flag to rename the output file
 
+        gcc -c -o <obj_filepath\file_name>.o <src_folder_path>\src_file_name>.c
+
+    To create a executable from .o file in gcc
+        gcc -o <excutable_folder_path\executable_file_name> [<object_file_name>.o,..]
