@@ -1,0 +1,56 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "Create executable for active file",
+			"command": "C:\\MinGW\\bin\\gcc.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g3", // Display all debug information
+				"-Wall", // Display all warnings in the program
+				"-I",
+				"${workspaceFolder}\\include",
+				"components.c",
+				"${file}",
+				"-o",
+				"${workspaceFolder}\\output\\${fileBasenameNoExtension}.exe"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: C:\\MinGW\\bin\\gcc.exe",
+		},
+		{
+			"type": "cppbuild",
+			"label": "Create executable for active file(standLone)",
+			"command": "C:\\MinGW\\bin\\gcc.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g3", // Display all debug information
+				"-Wall", // Display all warnings in the program
+				"${file}",
+				"-o",
+				"${workspaceFolder}\\output\\${fileBasenameNoExtension}.exe"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: C:\\MinGW\\bin\\gcc.exe",
+		}
+	]
+}

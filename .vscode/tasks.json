@@ -90,7 +90,32 @@
                 "Create Obj file for active File",
                 "C/C++: gcc.exe Create executable for active file"
             ]
-        }
+        },
+		{
+			"type": "cppbuild",
+			"label": "C/C++: gcc.exe {Test} Create executable for active file",
+			"command": "C:\\MinGW\\bin\\gcc.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g3", // Display all debug information
+				"-Wall", // Display all warnings in the program
+				"-o",
+				"${workspaceFolder}\\*\\output\\${fileBasenameNoExtension}.exe",
+				"${workspaceFolder}\\*\\output\\${fileBasenameNoExtension}.o",
+				"${workspaceFolder}\\common_module\\obj\\*.o",
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: C:\\MinGW\\bin\\gcc.exe",
+		}
 
 	]
 }

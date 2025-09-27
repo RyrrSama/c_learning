@@ -29,9 +29,11 @@
 typedef struct Queue
 {
     int *data; /**< Pointer to the array holding the queue elements. */
+    int initizeSize;
     int size;
     int front; /**< Index of the front element in the queue. */
-    void (*queue_initialize)(
+    int rear;  /**< Index of the rear element in the queue. */
+    void (*queue_create)(
         struct Queue *self,
         int size); /**< Function pointer to initialize the queue. */
     void (*enQueue)(struct Queue *self,
@@ -48,6 +50,8 @@ typedef struct Queue
                                                  check if  the queue is full. */
     void (*queue_display)(const struct Queue *self); /**< Function pointer to
                                            display the elements of the queue. */
+    void (*queue_resize)(const struct Queue *self);  /**< Function pointer to
+                                              resize the queue. */
     void (*queue_destroy)(
         struct Queue *self); /**< Function pointer to destroy the
                          queue and free allocated memory. */
@@ -59,7 +63,17 @@ typedef struct Queue
  * @param self Pointer to the queue structure.
  * @param size Size of the queue.
  */
-void queue_initialize(Queue *self, int size);
+void queue_initialize(Queue *self);
+
+/**
+ * @brief Creates a queue with the specified size.
+ *
+ * This function initializes a queue structure with the given size.
+ *
+ * @param self Pointer to the Queue structure to be initialized.
+ * @param size The size of the queue to be created.
+ */
+void queue_create(Queue *self, int size);
 
 /**
  * @brief Adds an element to the queue.
@@ -106,6 +120,17 @@ bool queue_isFull(const Queue *self);
  * @param self Pointer to the queue structure.
  */
 void queue_display(const Queue *self);
+
+/**
+ * @brief Resizes the queue to accommodate more elements.
+ *
+ * This function adjusts the size of the queue to ensure that it can hold
+ * additional elements. It is typically called when the queue is full and
+ * more space is needed to enqueue new elements.
+ *
+ * @param self A pointer to the Queue structure that needs to be resized.
+ */
+int queue_resize(Queue *self);
 
 /**
  * @brief Destroys the queue and frees allocated memory.

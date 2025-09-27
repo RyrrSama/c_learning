@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Run C/C++(GDB): COMMON_MODULE Launch and Debug Active File",
+            "name": "Run C/C++(GDB): Launch and Debug Active File",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}\\common_module\\output\\${fileBasenameNoExtension}.exe",
+            "program": "${workspaceFolder}\\output\\${fileBasenameNoExtension}.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
@@ -27,13 +27,13 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "build and link"
+            "preLaunchTask": "Create executable for active file"
         },
         {
-            "name": "Run C/C++(GDB): CONSOLE_MODULE Launch and Debug Active File",
+            "name": "Run C/C++(GDB)(Standlone): Launch and Debug Active File",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}\\console_application\\output\\${fileBasenameNoExtension}.exe",
+            "program": "${workspaceFolder}\\output\\${fileBasenameNoExtension}.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
@@ -52,7 +52,7 @@
                     "ignoreFailures": true
                 }
             ],
+            "preLaunchTask": "Create executable for active file(standLone)"
         }
-
     ]
 }

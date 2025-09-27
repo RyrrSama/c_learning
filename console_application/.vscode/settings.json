@@ -1,0 +1,40 @@
+{
+  "c-cpp-flylint.clang.includePaths": [
+    "${workspaceFolder}/include",
+    "${workspaceFolder}/src"
+  ],
+  "C_Cpp.default.includePath": [
+    "${workspaceFolder}/include",
+    "${workspaceFolder}/src"
+  ],
+    "c-cpp-flylint.run": "onSave",
+    "C_Cpp.clang_format_style": "file", // Use .clang-format file if present
+    "C_Cpp.clang_format_fallbackStyle": "Google", // Fallback style if no .clang-format file is found
+    "editor.formatOnSave": true,
+    "files.associations": {
+      "stringfuctions.h": "c",
+      "xstring": "c",
+      "xutility": "c",
+      "collections.h": "c",
+      "array": "c",
+      "initializer_list": "c",
+      "list": "c",
+      "utility": "c",
+      "vector": "c",
+      "xhash": "c",
+      "xtree": "c",
+      "stdbool.h": "c",
+      "algorithm": "c",
+      "iterator": "c",
+      "xmemory": "c",
+      "queue.h": "c",
+      "stack.h": "c",
+      "stdio.h": "c",
+      "components.h": "c",
+      "string.h": "c",
+      "windows.h": "c",
+      "cmath": "c",
+      "math.h": "c"
+    },
+  }
+  
