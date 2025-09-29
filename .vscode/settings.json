@@ -29,7 +29,8 @@
     "xmemory": "c",
     "queue.h": "c",
     "stack.h": "c",
-    "stdio.h": "c"
+    "stdio.h": "c",
+    "math.h": "c"
   },
   "bitoAI.codeCompletion.enableAutoCompletion": false // Format on save
 }

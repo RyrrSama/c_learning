@@ -4,12 +4,12 @@
 		{
 			"type": "shell",
 			"label": "Set Environment Variables",
-			"command":"C:\\Users\\Ramkumar.E\\Documents\\c_learning\\set_env.bat",
+			"command": "C:\\Users\\Ramkumar.E\\Documents\\c_learning\\set_env.bat",
 			"detail": "Set C/C++ Development environment",
 		},
 		{
 			"type": "shell",
-			"label": "Create Obj file for Module",
+			"label": "Create Obj file for Common Module",
 			"command": "C:\\MinGW\\bin\\gcc.exe",
 			"args": [
 				"-fdiagnostics-color=always",
@@ -20,7 +20,6 @@
 				"-o",
 				"${workspaceFolder}\\common_module\\obj\\${fileBasenameNoExtension}.o",
 			],
-			
 			"options": {
 				"cwd": "C:\\MinGW"
 			},
@@ -35,7 +34,7 @@
 		},
 		{
 			"type": "shell",
-			"label": "Create Obj file for active File",
+			"label": "Create Obj file for console_application",
 			"command": "C:\\MinGW\\bin\\gcc.exe",
 			"args": [
 				"-fdiagnostics-color=always",
@@ -44,7 +43,7 @@
 				"-c", // Compile or assemble the source files, but do not link
 				"${file}",
 				"-o",
-				"${fileDirname}\\obj\\${fileBasenameNoExtension}.o",
+				"${workspaceFolder}\\console_application\\obj\\${fileBasenameNoExtension}.o",
 			],
 			"options": {
 				"cwd": "C:\\MinGW"
@@ -60,7 +59,7 @@
 		},
 		{
 			"type": "cppbuild",
-			"label": "C/C++: gcc.exe Create executable for active file",
+			"label": "C/C++: gcc.exe Create executable for common module",
 			"command": "C:\\MinGW\\bin\\gcc.exe",
 			"args": [
 				"-fdiagnostics-color=always",
@@ -83,17 +82,17 @@
 			},
 			"detail": "compiler: C:\\MinGW\\bin\\gcc.exe",
 		},
-        {
-            "label": "build and link",
-            "dependsOrder": "sequence",
-            "dependsOn": [
-                "Create Obj file for active File",
-                "C/C++: gcc.exe Create executable for active file"
-            ]
-        },
+		{
+			"label": "build and link",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Create Obj file for active File",
+				"C/C++: gcc.exe Create executable for active file"
+			]
+		},
 		{
 			"type": "cppbuild",
-			"label": "C/C++: gcc.exe {Test} Create executable for active file",
+			"label": "C/C++: gcc.exe Create executable for console application",
 			"command": "C:\\MinGW\\bin\\gcc.exe",
 			"args": [
 				"-fdiagnostics-color=always",
@@ -102,7 +101,7 @@
 				"-o",
 				"${workspaceFolder}\\*\\output\\${fileBasenameNoExtension}.exe",
 				"${workspaceFolder}\\*\\output\\${fileBasenameNoExtension}.o",
-				"${workspaceFolder}\\common_module\\obj\\*.o",
+				"${workspaceFolder}\\*\\obj\\*.o",
 			],
 			"options": {
 				"cwd": "${fileDirname}"
@@ -116,6 +115,5 @@
 			},
 			"detail": "compiler: C:\\MinGW\\bin\\gcc.exe",
 		}
-
 	]
 }

@@ -11,18 +11,23 @@ COORD TOPLEFT, BOTTOMLEFT, TOPRIGHT, BOTTOMRIGHT, CENTER, playerPostion;
 HANDLE hActiveScreenBuffer;
 DWORD bufferSize, noOfCharWritten;
 CONSOLE_CURSOR_INFO cursorInfo;
-const char *playerSpint = "<-->";
-int isPaused            = 0;
+const char *playerSprint = "<-->";
+int isPaused             = 0;
+// Function declarations
 
 void clearCacheScreenBuffer(HANDLE hScreenBuffer);
 void switchActiveBuffer();
-void drawButton(hScreenBuffer);
+void drawButton(HANDLE hScreenBuffer);
+
+// Function Definition
+// TODO: Need to implement Menu Setup
 void menuSetup(HANDLE hScreenBuffer)
 {
 
     consoleScreenBufferInfo.dwSize.X;
     consoleScreenBufferInfo.dwSize.Y;
 }
+
 void pauseState()
 {
     while (1)
@@ -66,6 +71,7 @@ void updatePlayerPostion()
     playerPostion.Y = round((oldPlayerScalePercentageY / 100) *
                             consoleScreenBufferInfo.dwSize.Y);
 }
+
 void drawPlayer(HANDLE hScreenBuffer)
 {
     if (GetAsyncKeyState(VK_UP) & 0x8000 && playerPostion.Y > 1)
@@ -79,7 +85,7 @@ void drawPlayer(HANDLE hScreenBuffer)
         playerPostion.X < consoleScreenBufferInfo.srWindow.Right - 5)
         playerPostion.X += 1;
     SetConsoleCursorPosition(hScreenBuffer, playerPostion);
-    WriteConsole(hScreenBuffer, playerSpint, 5, &noOfCharWritten, NULL);
+    WriteConsole(hScreenBuffer, playerSprint, 5, &noOfCharWritten, NULL);
 }
 
 void switchActiveBuffer()
@@ -129,9 +135,9 @@ void updateScreenBufferInfo(HANDLE hScreenBuffer)
 
 int setupConsoleWindow()
 {
-    //  get default Console ScreenBuffer handle
+    //  Get default Console ScreenBuffer handle
     hDefaultScreenBuffer = GetStdHandle(STD_OUTPUT_HANDLE);
-    // create double buffer Screen console handles
+    // Create double buffer Screen console handles
     hCacheScreenBuffer01 =
         CreateConsoleScreenBuffer(GENERIC_READ | GENERIC_WRITE, // Access flags
                                   0,                            // No sharing
@@ -157,7 +163,7 @@ int setupConsoleWindow()
     SetConsoleActiveScreenBuffer(hActiveScreenBuffer);
     // Update ConsoleBufferScreenInfo
     updateScreenBufferInfo(hActiveScreenBuffer);
-    // Update Intital Screen Console info to perv Console Info
+    // Update Initial Screen Console info to perv Console Info
     GetConsoleScreenBufferInfo(hActiveScreenBuffer,
                                &prevConsoleScreenBufferInfo);
     //  Hide Cursor for all Console Screen Buffer
@@ -184,7 +190,7 @@ void drawBorder(HANDLE hScreenBuffer)
         FillConsoleOutputCharacter(hScreenBuffer, '|', 1, coord,
                                    &noOfCharWritten);
         coord.X += 1;
-        // Reigon Fill
+        // Region Fill
         FillConsoleOutputCharacter(hScreenBuffer, '.', innerRegion, coord,
                                    &noOfCharWritten);
         coord.X += innerRegion;
@@ -242,7 +248,7 @@ void gameLoop(int fps)
         }
         if (GetAsyncKeyState(VK_P))
         {
-            pauseState(hActiveScreenBuffer);
+            pauseState();
         }
         Sleep(1000 / fps);
     }

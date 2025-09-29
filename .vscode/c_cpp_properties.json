@@ -3,8 +3,10 @@
         {
             "name": "Win32",
             "includePath": [
+                "${workspaceFolder}/common_module/src",
                 "${workspaceFolder}/common_module/include",
-                "${workspaceFolder}/common_module/src"
+                "${workspaceFolder}/console_application/src",
+                "${workspaceFolder}/console_application/include"
             ],
             "defines": [],
             "compilerPath": "C:/MinGW/bin/gcc.exe",
@@ -14,7 +16,11 @@
             "browse": {
                 "path": [
                     "${workspaceFolder}/common_module",
-                    "${workspaceFolder}/common_module/src"
+                    "${workspaceFolder}/common_module/src",
+                    "${workspaceFolder}/common_module/include",
+                    "${workspaceFolder}/console_application",
+                    "${workspaceFolder}/console_application/src",
+                    "${workspaceFolder}/console_application/include"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
                 "databaseFilename": ""
